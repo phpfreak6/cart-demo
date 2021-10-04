@@ -1,0 +1,20 @@
+const BASE_URL='http://localhost:3000/';
+let USER_IMAGE_UPLOAD_PATH = BASE_URL+'public/images/uploads/users';
+let USER_IMAGE_BASE_PATH = BASE_URL+'images/uploads/users';
+
+let PRODUCT_IMAGE_UPLOAD_PATH = BASE_URL+'public/images/uploads/products';
+let PRODUCT_IMAGE_PATH = BASE_URL+'images/uploads/products';
+
+module.exports = {
+    MONGODB_CONNECTION_STRING: 'MONGODB_CONNECTION_STRING',
+    PRODUCT_IMAGE_PATH: '',
+    PRODUCT_IMAGE_UPLOAD_PATH: '',
+
+    JWT_SECRET_KEY: 'secretKey',
+
+    USER_IMAGE_UPLOAD_PATH: USER_IMAGE_UPLOAD_PATH,
+    USER_IMAGE_BASE_PATH: USER_IMAGE_BASE_PATH,
+
+    PRODUCT_IMAGE_UPLOAD_PATH: PRODUCT_IMAGE_UPLOAD_PATH,
+    PRODUCT_IMAGE_PATH: PRODUCT_IMAGE_PATH
+}

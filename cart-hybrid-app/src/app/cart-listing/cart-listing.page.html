@@ -1,0 +1,50 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title>
+      cart-listing
+      <div class="pull-right">
+
+        <ion-icon name="cart"></ion-icon>
+        <ion-badge color="danger">{{cartCnt}}</ion-badge>
+      </div>
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+
+<ion-content *ngIf="cartData.length; else noDataTempl;">
+
+  <ion-card *ngFor="let prod of cartData">
+    <ion-card-header>
+      <!-- <ion-card-subtitle>{{ prod.product_title | uppercase }}</ion-card-subtitle> -->
+      <ion-card-title>{{ prod?.product_detail.product_title | uppercase }}</ion-card-title>
+    </ion-card-header>
+  
+    <ion-card-content>
+      <p>
+
+        <ion-button color="danger" shape="round" expand="full" (click)="presentAlertConfirm(prod?._id)">Delete</ion-button>
+      </p>
+    </ion-card-content>
+  </ion-card>
+
+</ion-content>
+
+<ng-template #noDataTempl>
+
+  <ion-content>
+    <ion-card>
+    
+      <ion-card-content>
+        <p>Cart is empty.</p>
+        <p>
+           <ion-button color="primary" (click)="goToProductListing();">Go to product listing page</ion-button>
+        </p>
+
+      </ion-card-content>
+    </ion-card>
+  </ion-content>
+</ng-template>

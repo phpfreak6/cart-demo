@@ -1,0 +1,7 @@
+{
+  "name": "test-cart-hybrid",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}

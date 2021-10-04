@@ -1,0 +1,55 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="product-listing"></ion-back-button>
+    </ion-buttons>
+    <ion-title>
+      product-details
+      <div class="pull-right">
+
+        <ion-icon name="cart"></ion-icon>
+        <ion-badge color="danger">{{cartCnt}}</ion-badge>
+      </div>
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+  <!-- productsData -->
+
+  <ion-content *ngIf="isProductsDataSet; else noDataTempl;">
+
+    <ion-card>
+      <ion-card-header>
+        <!-- <ion-card-subtitle>{{ prod.product_title | uppercase }}</ion-card-subtitle> -->
+        <ion-card-title>{{ productsData?.product_title | uppercase }}</ion-card-title>
+      </ion-card-header>
+    
+      <ion-card-content>
+          
+        <p>
+          ${{ productsData?.product_price }}
+        </p>
+        <p>
+  
+          <ion-button color="success" shape="round" expand="full" (click)="addToCart(productsData?._id);">Add To Cart</ion-button>
+        </p>
+      </ion-card-content>
+    </ion-card>
+  
+  </ion-content>
+  
+  <ng-template #noDataTempl>
+  
+    <ion-content>
+      <ion-card>
+      
+        <ion-card-content>
+          <p>No products to display.</p>
+        </ion-card-content>
+      </ion-card>
+    </ion-content>
+  </ng-template>
+
+</ion-content>
